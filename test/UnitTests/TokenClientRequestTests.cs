@@ -84,7 +84,7 @@ namespace IdentityModel.UnitTests
 
             Func<Task> act = async () => await tokenClient.RequestDeviceTokenAsync(null);
 
-            act.Should().Throw<ArgumentException>().And.ParamName.Should().Be("device_code");
+            act.Should().ThrowAsync<ArgumentException>().Result.And.ParamName.Should().Be("device_code");
         }
 
         [Fact]
@@ -137,7 +137,7 @@ namespace IdentityModel.UnitTests
 
             Func<Task> act = async () => await tokenClient.RequestPasswordTokenAsync(userName: null);
 
-            act.Should().Throw<ArgumentException>().And.ParamName.Should().Be("username");
+            act.Should().ThrowAsync<ArgumentException>().Result.And.ParamName.Should().Be("username");
         }
 
         [Fact]
@@ -170,7 +170,7 @@ namespace IdentityModel.UnitTests
 
             Func<Task> act = async () => await tokenClient.RequestAuthorizationCodeTokenAsync(code: null, redirectUri: "uri", codeVerifier: "verifier");
 
-            act.Should().Throw<ArgumentException>().And.ParamName.Should().Be("code");
+            act.Should().ThrowAsync<ArgumentException>().Result.And.ParamName.Should().Be("code");
         }
 
         [Fact]
@@ -180,7 +180,7 @@ namespace IdentityModel.UnitTests
 
             Func<Task> act = async () => await tokenClient.RequestAuthorizationCodeTokenAsync(code: "code", redirectUri: null, codeVerifier: "verifier");
 
-            act.Should().Throw<ArgumentException>().And.ParamName.Should().Be("redirect_uri");
+            act.Should().ThrowAsync<ArgumentException>().Result.And.ParamName.Should().Be("redirect_uri");
         }
 
         [Fact]
@@ -210,7 +210,7 @@ namespace IdentityModel.UnitTests
 
             Func<Task> act = async () => await tokenClient.RequestRefreshTokenAsync(refreshToken: null, scope: "scope");
 
-            act.Should().Throw<ArgumentException>().And.ParamName.Should().Be("refresh_token");
+            act.Should().ThrowAsync<ArgumentException>().Result.And.ParamName.Should().Be("refresh_token");
         }
 
         [Fact]
@@ -220,7 +220,7 @@ namespace IdentityModel.UnitTests
 
             Func<Task> act = async () => await tokenClient.RequestTokenAsync(grantType: null);
 
-            act.Should().Throw<ArgumentException>().And.ParamName.Should().Be("grant_type");
+            act.Should().ThrowAsync<ArgumentException>().Result.And.ParamName.Should().Be("grant_type");
         }
 
         [Fact]

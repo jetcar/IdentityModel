@@ -231,7 +231,7 @@ namespace IdentityModel.UnitTests
 
             Func<Task> act = async () => await client.IntrospectTokenAsync(new TokenIntrospectionRequest());
 
-            act.Should().Throw<ArgumentException>().And.ParamName.Should().Be("token");
+            act.Should().ThrowAsync<ArgumentException>().Result.And.ParamName.Should().Be("token");
         }
 
         [Fact]
