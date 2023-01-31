@@ -8,12 +8,13 @@
 		<Nullable>enable</Nullable>
 		<LangVersion>latest</LangVersion>
 		<TargetFramework>net7.0</TargetFramework>
-		<OutputPath>publish</OutputPath>
-		<BaseOutputPath>publish</BaseOutputPath>
+		<OutputPath>../publish</OutputPath>
+		<BaseOutputPath>../publish</BaseOutputPath>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageProjectUrl>https://github.com/jetcar/IdentityModel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/jetcar/IdentityModel</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Version>1.0.1</Version>
 
 	</PropertyGroup>
 	<ItemGroup>
